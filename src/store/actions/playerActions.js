@@ -107,7 +107,7 @@ export const compare = (playerId, correctPlayerId) => {
 
 export const randomNumber = () => {
     return dispatch => {
-        fetch('http://localhost:3001/api/randomNumber')
+        fetch('https://devordle-backend.vercel.app/api/randomNumber')
             .then(response => response.json())
             .then(data => {
                 dispatch({
