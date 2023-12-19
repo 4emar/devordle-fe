@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'BwGradualDEMO-Black';
+  src: local("BwGradualDEMO-Black"),
+  url("./helper/fonts/BwGradualDEMO-Black.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'BwGradualDEMO-Light';
+  src: local("BwGradualDEMO-Light"),
+  url("./helper/fonts/BwGradualDEMO-Light.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'BwGradualDEMO-Medium';
+  src: local("BwGradualDEMO-Medium"),
+  url("./helper/fonts/BwGradualDEMO-Medium.otf") format("otf");
+}
