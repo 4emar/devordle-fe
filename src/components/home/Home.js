@@ -3,7 +3,7 @@ import {connect, useDispatch} from "react-redux";
 import * as actions from "../../store/actions";
 import devordleLogo from '../../helper/images/devordle.png';
 import {getAllPlayerNames, getAllPlayers, getCorrectPlayer, getGuessedPlayer} from "../../store/actions";
-import {compare} from "../../store/actions/playerActions";
+import {compare} from "../../store/actions";
 import {Autocomplete, Box, createFilterOptions, styled, TextField} from "@mui/material";
 import CorrectPlayer from "../player/CorrectPlayer";
 import WrongPlayer from "../player/WrongPlayer";
@@ -29,7 +29,6 @@ const Home = (props) => {
     const [guessedPlayers, setGuessedPlayers] = useState([]);
     const [answers, setAnswers] = useState([]);
     const dispatch = useDispatch();
-    // const [selectedOptions, setSelectedOptions] = useState([]);
     const [counter, setCounter] = useState(0);
     const [correctGuess, setCorrectGuess] = useState(false);
     const [correctPlayer, setCorrectPlayer] = useState();
@@ -102,7 +101,6 @@ const Home = (props) => {
     useEffect(() => {
         dispatch(getAllPlayerNames());
         setCorrectPlayer(getCorrectPlayer(props.randomNumber));
-        console.log(props.randomNumber);
     }, [dispatch, props.randomNumber]);
 
     const OPTIONS_LIMIT = 3;
@@ -137,9 +135,9 @@ const Home = (props) => {
                     onChange={(event, value) => {
                         handleClick(value);
                     }}
-                    onInputChange={(event, value) =>
+                    onInputChange={() =>
                         setOpen(true)}
-                    onClose={(event, value) =>
+                    onClose={() =>
                         setOpen(false)}
                     style={{width: 400}}
                     renderInput={(params) => (

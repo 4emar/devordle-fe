@@ -106,14 +106,15 @@ export const compare = (playerId, correctPlayerId) => {
 }
 
 export const randomNumber = () => {
-    return dispatch => {
-        fetch('https://devordle-backend.vercel.app/api/randomNumber')
+    return async dispatch => {
+        fetch('https://devordle-be-final.vercel.app/api/randomNumber')
             .then(response => response.json())
             .then(data => {
                 dispatch({
                     type: actionTypes.SELECT_RANDOM_NUMBER,
                     randomNumber: data.randomNumber
                 })
+                console.log(data.randomNumber)
             })
             .catch(error => console.error('Error fetching data:', error));
     }
